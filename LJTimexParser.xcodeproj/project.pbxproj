@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2ECE7B17B57D47A2BA92AB36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E3C9CDB4E4BC9BF4CBD7B /* libPods.a */; };
+		34DDEFBD1962C078004E83EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDEFBC1962C078004E83EA /* XCTest.framework */; };
+		34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDEFC11962C078004E83EA /* InfoPlist.strings */; };
+		34DDEFC51962C078004E83EA /* LJTimexParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDEFC41962C078004E83EA /* LJTimexParserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		34DDEFB91962C078004E83EA /* LJTimexParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJTimexParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34DDEFBC1962C078004E83EA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		34DDEFC01962C078004E83EA /* LJTimexParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LJTimexParserTests-Info.plist"; sourceTree = "<group>"; };
+		34DDEFC21962C078004E83EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34DDEFC41962C078004E83EA /* LJTimexParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJTimexParserTests.m; sourceTree = "<group>"; };
+		34DDEFC61962C078004E83EA /* LJTimexParserTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LJTimexParserTests-Prefix.pch"; sourceTree = "<group>"; };
+		8BBC4775E7D94DE5AA6CB732 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CD2E3C9CDB4E4BC9BF4CBD7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34DDEFB61962C078004E83EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DDEFBD1962C078004E83EA /* XCTest.framework in Frameworks */,
+				2ECE7B17B57D47A2BA92AB36 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34DDEFAE1962BE1A004E83EA = {
+			isa = PBXGroup;
+			children = (
+				34DDEFBE1962C078004E83EA /* LJTimexParserTests */,
+				34DDEFBB1962C078004E83EA /* Frameworks */,
+				34DDEFBA1962C078004E83EA /* Products */,
+				8BBC4775E7D94DE5AA6CB732 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		34DDEFBA1962C078004E83EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34DDEFB91962C078004E83EA /* LJTimexParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34DDEFBB1962C078004E83EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34DDEFBC1962C078004E83EA /* XCTest.framework */,
+				CD2E3C9CDB4E4BC9BF4CBD7B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34DDEFBE1962C078004E83EA /* LJTimexParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				34DDEFC41962C078004E83EA /* LJTimexParserTests.m */,
+				34DDEFBF1962C078004E83EA /* Supporting Files */,
+			);
+			path = LJTimexParserTests;
+			sourceTree = "<group>";
+		};
+		34DDEFBF1962C078004E83EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				34DDEFC01962C078004E83EA /* LJTimexParserTests-Info.plist */,
+				34DDEFC11962C078004E83EA /* InfoPlist.strings */,
+				34DDEFC61962C078004E83EA /* LJTimexParserTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34DDEFB81962C078004E83EA /* LJTimexParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34DDEFC71962C078004E83EA /* Build configuration list for PBXNativeTarget "LJTimexParserTests" */;
+			buildPhases = (
+				F528C0EE59364A3E83EB7175 /* Check Pods Manifest.lock */,
+				34DDEFB51962C078004E83EA /* Sources */,
+				34DDEFB61962C078004E83EA /* Frameworks */,
+				34DDEFB71962C078004E83EA /* Resources */,
+				D23E799366A5488080B52E0B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LJTimexParserTests;
+			productName = LJTimexParserTests;
+			productReference = 34DDEFB91962C078004E83EA /* LJTimexParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34DDEFAF1962BE1A004E83EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 34DDEFB21962BE1A004E83EA /* Build configuration list for PBXProject "LJTimexParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 34DDEFAE1962BE1A004E83EA;
+			productRefGroup = 34DDEFBA1962C078004E83EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34DDEFB81962C078004E83EA /* LJTimexParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34DDEFB71962C078004E83EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D23E799366A5488080B52E0B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F528C0EE59364A3E83EB7175 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34DDEFB51962C078004E83EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DDEFC51962C078004E83EA /* LJTimexParserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34DDEFC11962C078004E83EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34DDEFC21962C078004E83EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34DDEFB31962BE1A004E83EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		34DDEFB41962BE1A004E83EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		34DDEFC81962C078004E83EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BBC4775E7D94DE5AA6CB732 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LJTimexParserTests/LJTimexParserTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "LJTimexParserTests/LJTimexParserTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		34DDEFC91962C078004E83EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BBC4775E7D94DE5AA6CB732 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LJTimexParserTests/LJTimexParserTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "LJTimexParserTests/LJTimexParserTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34DDEFB21962BE1A004E83EA /* Build configuration list for PBXProject "LJTimexParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34DDEFB31962BE1A004E83EA /* Debug */,
+				34DDEFB41962BE1A004E83EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34DDEFC71962C078004E83EA /* Build configuration list for PBXNativeTarget "LJTimexParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34DDEFC81962C078004E83EA /* Debug */,
+				34DDEFC91962C078004E83EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34DDEFAF1962BE1A004E83EA /* Project object */;
+}

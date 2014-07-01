@@ -1,0 +1,14 @@
+PODS:
+  - LJDynamicParser (0.0.2)
+
+DEPENDENCIES:
+  - LJDynamicParser (from `https://github.com/lattejed/LJDynamicParser.git`)
+
+EXTERNAL SOURCES:
+  LJDynamicParser:
+    :git: https://github.com/lattejed/LJDynamicParser.git
+
+SPEC CHECKSUMS:
+  LJDynamicParser: 226f06b8b17d38787072b2009b2cc1fe9e831631
+
+COCOAPODS: 0.32.1
