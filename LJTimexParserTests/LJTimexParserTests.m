@@ -50,8 +50,7 @@
     for (NSString* testString in _testStrings)
     {
         LJDynamicParserASTNode* rootNode = [parser parse:testString ignoreCase:YES];
-        //XCTAssertNotNil(rootNode, @"Failed to parse '%@'", testString);
-        NSLog(@"%@ > %@", testString, [rootNode literalValue]);
+        XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], testString, @"");
     }
 }
 
