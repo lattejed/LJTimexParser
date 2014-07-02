@@ -7,8 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "LJDynamicParser.h"
+#import "LJDynamicParserSyntax.h"
+#import "LJDynamicParserASTNode.h"
 
 @interface LJTimexParserTests : XCTestCase
+
+@property (strong) NSString* timexGrammar;
+@property (strong) NSArray* testStrings;
 
 @end
 
@@ -17,7 +23,11 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    NSString* filepath = [[NSBundle bundleForClass:[self class]] pathForResource:@"timex" ofType:@"grammar"];
+    _timexGrammar = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:nil];
+    filepath = [[NSBundle bundleForClass:[self class]] pathForResource:@"test" ofType:@"strings"];
+    NSString* testStringsString = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:nil];
+    _testStrings = [testStringsString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
 
 - (void)tearDown
@@ -26,9 +36,18 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)test
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
+    int passed = 0; int failed = 0;
+    for (NSString* testString in _testStrings)
+    {
+        LJDynamicParserASTNode* rootNode = [parser parse:testString ignoreCase:YES];
+        XCTAssertNotNil(rootNode, @"Failed to parse '%@'", testString);
+        if (rootNode)   passed++;
+        else            failed++;
+    }
+    NSLog(@"Passed: %d Failed: %d", passed, failed);
 }
 
 @end

@@ -11,6 +11,9 @@
 		34DDEFBD1962C078004E83EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDEFBC1962C078004E83EA /* XCTest.framework */; };
 		34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDEFC11962C078004E83EA /* InfoPlist.strings */; };
 		34DDEFC51962C078004E83EA /* LJTimexParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDEFC41962C078004E83EA /* LJTimexParserTests.m */; };
+		34DDEFCC1962C486004E83EA /* LJTimexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDEFCB1962C486004E83EA /* LJTimexParser.m */; };
+		34DDEFCF1962C9E3004E83EA /* timex.grammar in Resources */ = {isa = PBXBuildFile; fileRef = 34DDEFCE1962C9E3004E83EA /* timex.grammar */; };
+		34DDEFD11962D114004E83EA /* test.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDEFD01962D114004E83EA /* test.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		34DDEFC21962C078004E83EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		34DDEFC41962C078004E83EA /* LJTimexParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJTimexParserTests.m; sourceTree = "<group>"; };
 		34DDEFC61962C078004E83EA /* LJTimexParserTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LJTimexParserTests-Prefix.pch"; sourceTree = "<group>"; };
+		34DDEFCA1962C486004E83EA /* LJTimexParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJTimexParser.h; sourceTree = "<group>"; };
+		34DDEFCB1962C486004E83EA /* LJTimexParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJTimexParser.m; sourceTree = "<group>"; };
+		34DDEFCE1962C9E3004E83EA /* timex.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = timex.grammar; sourceTree = "<group>"; };
+		34DDEFD01962D114004E83EA /* test.strings */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = test.strings; sourceTree = "<group>"; };
 		8BBC4775E7D94DE5AA6CB732 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CD2E3C9CDB4E4BC9BF4CBD7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -40,6 +47,7 @@
 		34DDEFAE1962BE1A004E83EA = {
 			isa = PBXGroup;
 			children = (
+				34DDEFCD1962C4A7004E83EA /* LJTimexParser */,
 				34DDEFBE1962C078004E83EA /* LJTimexParserTests */,
 				34DDEFBB1962C078004E83EA /* Frameworks */,
 				34DDEFBA1962C078004E83EA /* Products */,
@@ -67,6 +75,7 @@
 		34DDEFBE1962C078004E83EA /* LJTimexParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				34DDEFD01962D114004E83EA /* test.strings */,
 				34DDEFC41962C078004E83EA /* LJTimexParserTests.m */,
 				34DDEFBF1962C078004E83EA /* Supporting Files */,
 			);
@@ -81,6 +90,16 @@
 				34DDEFC61962C078004E83EA /* LJTimexParserTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34DDEFCD1962C4A7004E83EA /* LJTimexParser */ = {
+			isa = PBXGroup;
+			children = (
+				34DDEFCE1962C9E3004E83EA /* timex.grammar */,
+				34DDEFCA1962C486004E83EA /* LJTimexParser.h */,
+				34DDEFCB1962C486004E83EA /* LJTimexParser.m */,
+			);
+			name = LJTimexParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */,
+				34DDEFD11962D114004E83EA /* test.strings in Resources */,
+				34DDEFCF1962C9E3004E83EA /* timex.grammar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DDEFCC1962C486004E83EA /* LJTimexParser.m in Sources */,
 				34DDEFC51962C078004E83EA /* LJTimexParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
