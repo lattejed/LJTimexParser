@@ -1,5 +1,5 @@
 
-<timex>                 ::= <date> | <frequency> | <span>
+<timex>                 ::= <span> | <frequency> | <date>
 <date>                  ::= <spoken_date> | <relative_date>                                                     
 <spoken_date>           ::= <day_of_week>                                                                       
 <day_of_week>           ::= <day_of_week_long> | <day_of_week_short> <maybe_dot>
@@ -15,7 +15,7 @@
 
 <span>                  ::= <maybe_from> <date> <to_or_until> <date>
 <maybe_from>            ::= "from" | ""
-<to_or_until>           ::= "to" | "until"
+<to_or_until>           ::= "to" | "until" | "-"
 
 
 <month_long>            ::= "january" | "february" | "march" | "april" | "may" | "june" | "july" | "august" | "september" | "october" | "november" | "december"

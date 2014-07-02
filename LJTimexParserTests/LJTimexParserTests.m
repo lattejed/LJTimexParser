@@ -39,15 +39,20 @@
 - (void)test
 {
     LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
-    int passed = 0; int failed = 0;
+    
+    LJDynamicParserASTNode* rootNode = [parser parse:@"Next Tuesday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Next Tuesday", @"");
+
+    rootNode = [parser parse:@"Monday - Friday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday - Friday", @"");
+
+    
     for (NSString* testString in _testStrings)
     {
         LJDynamicParserASTNode* rootNode = [parser parse:testString ignoreCase:YES];
-        XCTAssertNotNil(rootNode, @"Failed to parse '%@'", testString);
-        if (rootNode)   passed++;
-        else            failed++;
+        //XCTAssertNotNil(rootNode, @"Failed to parse '%@'", testString);
+        NSLog(@"%@ > %@", testString, [rootNode literalValue]);
     }
-    NSLog(@"Passed: %d Failed: %d", passed, failed);
 }
 
 @end
