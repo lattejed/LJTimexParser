@@ -42,9 +42,7 @@
     
     LJDynamicParserASTNode* rootNode = [parser parse:@"Next Tuesday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Next Tuesday", @"");
-    
-    return;
-    
+        
     rootNode = [parser parse:@"Tomorrow" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Tomorrow", @"");
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2ECE7B17B57D47A2BA92AB36 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E3C9CDB4E4BC9BF4CBD7B /* libPods.a */; };
+		345438681965692A00E1E4DD /* scratch.grammar in Resources */ = {isa = PBXBuildFile; fileRef = 345438671965692A00E1E4DD /* scratch.grammar */; };
 		34DDEFBD1962C078004E83EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDEFBC1962C078004E83EA /* XCTest.framework */; };
 		34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDEFC11962C078004E83EA /* InfoPlist.strings */; };
 		34DDEFC51962C078004E83EA /* LJTimexParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDEFC41962C078004E83EA /* LJTimexParserTests.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		345438671965692A00E1E4DD /* scratch.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scratch.grammar; sourceTree = "<group>"; };
 		34DDEFB91962C078004E83EA /* LJTimexParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJTimexParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DDEFBC1962C078004E83EA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		34DDEFC01962C078004E83EA /* LJTimexParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LJTimexParserTests-Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				34DDEFCE1962C9E3004E83EA /* timex.grammar */,
+				345438671965692A00E1E4DD /* scratch.grammar */,
 				34DDEFCA1962C486004E83EA /* LJTimexParser.h */,
 				34DDEFCB1962C486004E83EA /* LJTimexParser.m */,
 			);
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345438681965692A00E1E4DD /* scratch.grammar in Resources */,
 				34DDEFC31962C078004E83EA /* InfoPlist.strings in Resources */,
 				34DDEFD11962D114004E83EA /* test.strings in Resources */,
 				34DDEFCF1962C9E3004E83EA /* timex.grammar in Resources */,
