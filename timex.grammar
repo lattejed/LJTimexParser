@@ -4,10 +4,11 @@
 <spoken_date>           ::= <day_of_week>                                                                       
 <day_of_week>           ::= <day_of_week_long> | <day_of_week_short> <maybe_dot>
 <relative_date>         ::= <relative_day> | <next_day_of_week> | <this_day_of_week> | <on_day_of_week>
-<next_day_of_week>      ::= "next" <day_of_week>   
-<this_day_of_week>      ::= "this" <day_of_week>
+<next_day_of_week>      ::= "next" <maybe_week> <day_of_week>
+<this_day_of_week>      ::= "this" <maybe_week> <day_of_week>
 <on_day_of_week>        ::= "on" <day_of_week>
 <relative_day>          ::= "today" | "tomorrow" | "yesterday"
+<maybe_week>            ::= "week" | ""
 
 <frequency>             ::= <on_frequency> | <every_frequency> | <relative_frequency>
 <on_frequency>          ::= "on" <day_of_week_long> "s"
