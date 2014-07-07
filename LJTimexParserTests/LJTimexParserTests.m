@@ -50,23 +50,14 @@
     rootNode = [parser parse:@"Next week Tuesday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Next week Tuesday", @"");
     
-    rootNode = [parser parse:@"On Tuesdays" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"On Tuesday s", @"");
-    
-    rootNode = [parser parse:@"Every Tuesday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every Tuesday", @"");
-    
-    rootNode = [parser parse:@"Every week Monday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week Monday", @"");
-    
-    rootNode = [parser parse:@"Every week on Mondays" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week on Monday s", @"");
-    
-    rootNode = [parser parse:@"Every week on Monday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week on Monday", @"");
-    
     rootNode = [parser parse:@"On Monday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"On Monday", @"");
+}
+
+- (void)testFailingStrings
+{
+    LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
+    LJDynamicParserASTNode* rootNode;
     
     rootNode = [parser parse:@"Every other day" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every other day", @"");
@@ -76,7 +67,7 @@
     
     rootNode = [parser parse:@"Every other week Monday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every other week Monday", @"");
-
+    
     rootNode = [parser parse:@"From Tomorrow to Sunday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"From Tomorrow to Sunday", @"");
     
@@ -91,12 +82,21 @@
     
     rootNode = [parser parse:@"Monday - Friday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday - Friday", @"");
-}
 
-- (void)testFailingStrings
-{
-    LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
-    LJDynamicParserASTNode* rootNode;
+    rootNode = [parser parse:@"On Tuesdays" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"On Tuesday s", @"");
+    
+    rootNode = [parser parse:@"Every Tuesday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every Tuesday", @"");
+    
+    rootNode = [parser parse:@"Every week Monday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week Monday", @"");
+    
+    rootNode = [parser parse:@"Every week on Mondays" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week on Monday s", @"");
+    
+    rootNode = [parser parse:@"Every week on Monday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every week on Monday", @"");
     
     rootNode = [parser parse:@"On Jan 1" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"On Jan 1", @"");

@@ -1,35 +1,31 @@
 
 
-<day>                                       ::= <day_spoken> | <day_cardinal> | <day_ordinal>
-<day_spoken>                                ::= <day_spoken_long> | <day_spoken_short>
-<day_spoken_long>                           ::= "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday"
-<day_spoken_short>                          ::= "mon" | "tue" | "wed" | "weds" | "thur" | "thu" | "thurs" | "fri" | "sat" | "sun"
-<day_cardinal>                              ::= <digits_one_to_nine_optional_zero> | <digits_one_or_two> <digits> | "30" | "31"
-<day_ordinal>                               ::= <day_ordinal_spoken> | <day_ordinal_numerical>
-<day_ordinal_spoken>                        ::= "first" | "second" | "third" | "fourth" | "fifth" | "sixth" | "seventh" | "eighth" | "ninth" | "tenth" | "eleventh" | "twelfth" | "thirteenth" | "fourteenth" | "fifteenth" | "sixteenth" | "seventeenth" | "eighteenth" | "nineteenth" | "twentieth" | "twenty-first" | "twenty-second" | "twenty-third" | "twenty-fourth" | "twenty-fifth" | "twenty-sixth" | "twenty-seventh" | "twenty-eighth" | "twenty-ninth" | "thirtieth" | "thirty-first"
-<day_ordinal_numerical>                     ::= <days_ordinal_st> | <days_ordinal_nd> | <days_ordinal_rd> | <days_ordinal_th>
-<days_ordinal_st>                           ::= "1st" | "21st" | "31st"
-<days_ordinal_nd>                           ::= "2nd" | "22nd"
-<days_ordinal_rd>                           ::= "3rd" | "23rd"
-<days_ordinal_th>                           ::= <digits_four_to_nine> "th" | "1" <digits_four_to_nine> "th" | "20th" | "2" <digits_four_to_nine> "th" | "30th"
+<date>                                      ::= <date_relative> | <date_absolute>
 
 
-<month>                                     ::= <month_spoken> | <month_ordinal>
-<month_spoken>                              ::= <month_spoken_long> | <month_spoken_short>
-<month_spoken_long>                         ::= "january" | "february" | "march" | "april" | "may" | "june" | "july" | "august" | "september" | "october" | "november" | "december"
-<month_spoken_short>                        ::= "jan" | "feb" | "mar" | "apr" | "may" | "jun" | "jul" | "aug" | "sep" | "sept" | "oct" | "nov" | "dec"
-<month_cardinal>                            ::= <digits_one_to_nine_optional_zero> | "1" <digits_one_or_two>
 
 
-<year>                                      ::= <year_cardinal>
-<year_cardinal>                             ::= <year_cardinal_long> | <year_cardinal_short>
-<year_cardinal_long>                        ::= "19" <year_cardinal_short> | "20" <year_cardinal_short> | "21" <year_cardinal_short>
-<year_cardinal_short>                       ::= <digit> <digit>
+<timex>                     ::= <span> | <frequency> | <date>
+<date>                      ::= <spoken_date> | <relative_date>
+<spoken_date>               ::= <day_of_week>
+<day_of_week>               ::= <day_of_week_long> | <day_of_week_short> "." | <day_of_week_short>
+
+<relative_date>             ::= <relative_day> | <next_day_of_week> | <this_day_of_week> | <on_day_of_week>
+<next_day_of_week>          ::= <next_maybe_week> <day_of_week>
+<next_maybe_week>           ::= "next" "week" | "next"
+<this_day_of_week>          ::= <this_maybe_week> <day_of_week>
+<this_maybe_week>           ::= "this" | "this" "week"
+<on_day_of_week>            ::= "on" <day_of_week>
+<relative_day>              ::= "today" | "tomorrow" | "yesterday"
+
+<frequency>                 ::= <on_frequency> | <on_week_frequency> | <every_other_frequency> | <every_frequency>
+<on_frequency>              ::= "on" <day_of_week_long> "s"
+<on_week_frequency>         ::= "every" "week" "on" <day_of_week_long> "s"
+<every_frequency>           ::= "every" <day_of_week> | "every" "week" <day_of_week> | "every" "week" "on" <day_of_week>
+<every_other_frequency>     ::= "every" "other" <day_of_week> | "every" "other" "week" <day_of_week> | "every" "other" "day"
+
+<span>                      ::= "from" <date> <to_or_until> <date> | <date> <to_or_until> <date>
+<to_or_until>               ::= "to" | "until" | "-"
 
 
-<digits_one_to_nine_optional_zero>          ::= "0" <digits_no_zero> | <digits_no_zero>
-<digits_four_to_nine>                       ::= "4" | "5" | "6" | "7" | "8" | "9"
-<digits_one_or_two>                         ::= "1" | "2"
-<digits_no_zero>                            ::= <digits_one_or_two> | "3" | <digits_four_to_nine>
-<digits>                                    ::= "0" | <digits_no_zero>
 
