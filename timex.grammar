@@ -16,7 +16,7 @@
 <on_frequency>              ::= "on" <day_of_week_long> "s"
 <on_week_frequency>         ::= "every" "week" "on" <day_of_week_long> "s"
 <every_frequency>           ::= "every" <day_of_week> | "every" "week" <day_of_week> | "every" "week" "on" <day_of_week>
-<every_other_frequency>     ::= "every" "other" <day_of_week>
+<every_other_frequency>     ::= "every" "other" <day_of_week> | "every" "other" "week" <day_of_week> | "every" "other" "day"
 
 <span>                      ::= "from" <date> <to_or_until> <date> | <date> <to_or_until> <date>
 <to_or_until>               ::= "to" | "until" | "-"

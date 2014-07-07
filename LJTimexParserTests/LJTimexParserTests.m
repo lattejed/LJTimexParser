@@ -36,13 +36,14 @@
     [super tearDown];
 }
 
-- (void)test
+- (void)passingTests;
 {
     LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
-    
-    LJDynamicParserASTNode* rootNode = [parser parse:@"Next Tuesday" ignoreCase:YES];
+    LJDynamicParserASTNode* rootNode;
+
+    rootNode = [parser parse:@"Next Tuesday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Next Tuesday", @"");
-        
+    
     rootNode = [parser parse:@"Tomorrow" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Tomorrow", @"");
     
@@ -75,6 +76,27 @@
     
     rootNode = [parser parse:@"Every other week Monday" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Every other week Monday", @"");
+
+    rootNode = [parser parse:@"From Tomorrow to Sunday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"From Tomorrow to Sunday", @"");
+    
+    rootNode = [parser parse:@"Tomorrow to Sunday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Tomorrow to Sunday", @"");
+    
+    rootNode = [parser parse:@"Monday until Tuesday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday until Tuesday", @"");
+    
+    rootNode = [parser parse:@"From tomorrow until Tuesday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"From tomorrow until Tuesday", @"");
+    
+    rootNode = [parser parse:@"Monday - Friday" ignoreCase:YES];
+    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday - Friday", @"");
+}
+
+- (void)failingTests;
+{
+    LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
+    LJDynamicParserASTNode* rootNode;
     
     rootNode = [parser parse:@"On Jan 1" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"On Jan 1", @"");
@@ -85,24 +107,12 @@
     rootNode = [parser parse:@"1 / 1 / 14" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"1 / 1 / 14", @"");
     
-    rootNode = [parser parse:@"From Tomorrow to Sunday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"From Tomorrow to Sunday", @"");
-    
-    rootNode = [parser parse:@"Tomorrow to Sunday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Tomorrow to Sunday", @"");
-    
     rootNode = [parser parse:@"All next week" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"All next week", @"");
     
     rootNode = [parser parse:@"All week" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"All week", @"");
         
-    rootNode = [parser parse:@"Monday until Tuesday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday until Tuesday", @"");
-    
-    rootNode = [parser parse:@"From tomorrow until Tuesday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"From tomorrow until Tuesday", @"");
-    
     rootNode = [parser parse:@"First tuesday of the month" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"First tuesday of the month", @"");
     
@@ -117,15 +127,6 @@
     
     rootNode = [parser parse:@"Lunchtime" ignoreCase:YES];
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Lunchtime", @"");
-    
-    rootNode = [parser parse:@"Monday - Friday" ignoreCase:YES];
-    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday - Friday", @"");
-
-    //for (NSString* testString in _testStrings)
-    //{
-    //    LJDynamicParserASTNode* rootNode = [parser parse:testString ignoreCase:YES];
-    //    XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], testString, @"");
-    //}
 }
 
 @end
