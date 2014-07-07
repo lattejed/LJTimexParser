@@ -6,15 +6,16 @@
 
 <relative_date>         ::= <relative_day> | <next_day_of_week> | <this_day_of_week> | <on_day_of_week>
 <next_day_of_week>      ::= <next_maybe_week> <day_of_week>
-<next_maybe_week>       ::= "next" | "next" "week"
+<next_maybe_week>       ::= "next" "week" | "next" 
 <this_day_of_week>      ::= <this_maybe_week> <day_of_week>
 <this_maybe_week>       ::= "this" | "this" "week"
 <on_day_of_week>        ::= "on" <day_of_week>
 <relative_day>          ::= "today" | "tomorrow" | "yesterday"
 
-<frequency>             ::= <on_frequency> | <every_frequency> | <relative_frequency>
+<frequency>             ::= <on_frequency> | <on_week_frequency> | <every_frequency> | <relative_frequency>
 <on_frequency>          ::= "on" <day_of_week_long> "s"
-<every_frequency>       ::= "every" <day_of_week>
+<on_week_frequency>     ::= "every" "week" "on" <day_of_week_long> "s"
+<every_frequency>       ::= "every" <day_of_week> | "every" "week" <day_of_week> | "every" "week" "on" <day_of_week>
 
 <span>                  ::= "from" <date> <to_or_until> <date> | <date> <to_or_until> <date>
 <to_or_until>           ::= "to" | "until" | "-"
