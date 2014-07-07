@@ -36,7 +36,7 @@
     [super tearDown];
 }
 
-- (void)passingTests;
+- (void)testPassingStrings
 {
     LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
     LJDynamicParserASTNode* rootNode;
@@ -93,7 +93,7 @@
     XCTAssertEqualObjects([[rootNode nodeForRule:@"timex"] literalValue], @"Monday - Friday", @"");
 }
 
-- (void)failingTests;
+- (void)testFailingStrings
 {
     LJDynamicParser* parser = [[LJDynamicParser alloc] initWithGrammar:_timexGrammar];
     LJDynamicParserASTNode* rootNode;
